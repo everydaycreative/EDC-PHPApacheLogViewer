@@ -253,7 +253,7 @@ if ($logtype=='Access') {
 				// Display
 				//
 				$codetype	= substr($code,0,1);
-				$hcode		= '<a href="http://fr.wikipedia.org/wiki/Liste_des_codes_HTTP#'.$codetype.'" target="httpcode"><span class="c'.$codetype.'">'.$code.'</span></a>';
+				$hcode		= '<a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#'.$codetype.'" target="httpcode"><span class="c'.$codetype.'">'.$code.'</span></a>';
 
 				if ($lastday!=$day) {
 					$result.= '<tr><td style="border-left:1px solid #666; border-right:1px solid #666; border-top:1px solid #333;background-color:#666;color:#fff;" colspan="7">'.$day.'/'.$mon.'/'.$yea.'</td></tr>';
