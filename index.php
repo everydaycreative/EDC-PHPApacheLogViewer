@@ -1,5 +1,11 @@
 <?php
 /**
+ *	EDC-PHPApacheLogViewer
+ *	Copyright 2013 Everyday Creative <hey+team@everydaycreative.ca>
+ */
+
+
+/**
  * PHPApacheLogViewer
  *
  * Copyright © 2009-2012 Raphael Barbate (potsky) <potsky@me.com> [http://www.potsky.com]
@@ -28,7 +34,14 @@ $files	 = array(
 	'Error'		=> 'error.log',
 );
 
+
 include_once('config.inc.php');
+
+if(!isset($time_to_quit)){
+	set_time_limit(10);
+}else{
+	set_time_limit($time_to_quit);
+}
 
 $logtype = @$_GET['l'];
 $logtype = ($logtype=='') ? 'Error' : $logtype;
@@ -195,6 +208,9 @@ if ($logtype=='Access') {
 	$lndisp	 = 0;
 
 	$fl = fopen($files[$logtype], "r");
+	if(!$fl){
+		die("Cannot access file: ". $files[$logtype]);
+	}
 	for($x_pos = 0, $ln = 0, $line=''; fseek($fl, $x_pos, SEEK_END) !== -1; $x_pos--) {
 	    $char = fgetc($fl);
 	    if ($char === "\n") {
@@ -308,6 +324,9 @@ else if ($logtype=='Error') {
 	$lndisp	 = 0;
 
 	$fl = fopen($files[$logtype], "r");
+	if(!$fl){
+		die("Cannot access file: ". $files[$logtype]);
+	}
 	for($x_pos = 0, $ln = 0, $line=''; fseek($fl, $x_pos, SEEK_END) !== -1; $x_pos--) {
 	    $char = fgetc($fl);
 	    if ($char === "\n") {
