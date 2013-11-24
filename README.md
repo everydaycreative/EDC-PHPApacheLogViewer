@@ -1,6 +1,6 @@
 EDC's Fork of PHPApacheLogViewer
 ==================
-This fork is our attempt at addressing some the issues of PHPApacheLogViewer by fixing bugs and doing other dev stuff with the goal of supporting our usage of it.
+This fork is our attempt at addressing some the issues of PHPApacheLogViewer by fixing bugs and doing other dev stuff with the specific goal of supporting our usage of it.
 
 ### Changes ###
 * ```index.php```: Fixes a bug that occurs when the log file is inaccessible or does not exist which causes PHPApacheLogViewer to get stuck in an infinite loop and floods your log file.
